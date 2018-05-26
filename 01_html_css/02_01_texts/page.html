@@ -6,18 +6,34 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="mystyle.css">
+	<link rel="stylesheet" href="mystyle2.css">
 </head>
 
 <body>
-
+	<script>
+		function chgcontent() {
+			document.getElementById("demo").innerHTML = "Hello JavaScript!";
+			document.getElementById("demo").style.fontSize = "35px";
+			document.getElementById("btn1").innerHTML = "Just Clicked";
+			document.getElementById("sum").innerHTML = 5 + 6;
+		}
+	</script>
+	<p class="mydemo">Make yourself so knowledgeable and experienced with excellence that success comes looking for you!</p>
+	<p id="demo">JavaScript can change HTML content.</p>
+	</h2><p id="sum">Sum of 5 + 6 =</p></h2>
+	<script>
+		document.write("The sum of 5 +6 = ", 5+6);	
+	</script>
+	<button id="btn1" type="button" onclick= chgcontent()>Click Me!</button>
 	<!-- 1. create a <h1> title with the text: Fantastic Mr Fox -->
-
-
+    <h1>Fantastic Mr Fox</h1>
 	<!-- 2. create a <h3> subtitle with the text: by Roald Dahl -->
 	<!-- 3. Make the words 'Roald Dahl' italic by putting <em>...</em> around it -->
-
-
+	<h3>by <em>Roald Dahl</em></h3>
 	<!-- 4. create a <p> paragraph with the text: This is my favorite book. I am young at heart. -->
+		<p>This is my favorite book. I am young at heart</p>
 
 
 </body>
