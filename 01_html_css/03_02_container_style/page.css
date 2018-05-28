@@ -3,7 +3,7 @@
 
 /*1. change the background color to: #f3f3f3*/
 .my-body{
-	
+    backgorund-color: #f3f3f3;
 }
 
 /*2. add a border of color: #aaa*/
@@ -14,12 +14,22 @@
 /*7. create an inner padding (space) of size: 1rem*/
 /*8. create a shadow: 5px 5px 5px #aaa*/
 .my-container{
+    border-color: #aaa;
+    border: 1px solid #aaa;
+    background-color:white;
+    max-width:600px;
+    margin-top: 10px;  /* you can write this as margin: 10px for top and bottom together same goes for padding */
+    margin-bottom:10px; /* if you have to define both topbottom and left-right then you say as margin: 10px 10px */
 
+    margin-left:auto;
+    margin-right:auto; /* centre the div */
 
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
 
-
-
-
+    box-shadow: 5px 5px 5px #aaa;
 }
 
 /*9. change text color to: orangered*/
@@ -27,15 +37,19 @@
 /*11. increase the font size to: 4rem*/
 .my-highlight{
 	
-
-
+    color: orangered;
+    text-decoration :overline;
+    font-size: 4rem;
 }
 
 /*12. reduce the width to: 20%*/
 /*13. set border as: 10px solid orangered*/
 /*14. shift to the left using margin-left*/
 .my-hr{
-	
-
+	width: 20%;
+    border: 10px;
+    border-style: solid;
+    border-color: orangered;
+    margin-left: 0px;
 	
 }
