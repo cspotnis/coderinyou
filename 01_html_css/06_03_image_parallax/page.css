@@ -8,6 +8,7 @@
 	font-size: 3rem;
 	max-width: 600px;
 	margin: auto;
+	background-color: transparent;
 }
 
 /*1. set the height to: 80vh*/
@@ -17,10 +18,11 @@
 /*5. align the image background position*/
 /*6. make a parallax effect by fixing the background-attachment*/
 .my-parallax{
-	
 
-
-
-
-	
+	height: 80vh;
+	background-image: url('galaxy_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }

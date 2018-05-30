@@ -1,0 +1,13 @@
+img {
+    max-width: 100%;
+    width:400px;
+    border-radius:100px;
+    display:inline-block;
+}
+
+.my-box {
+    width:500px;
+    height:500px;
+    backgorund-image: url("http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/2v/dp/p02vdpfn.jpg");
+    background-size: contain;
+}
