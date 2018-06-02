@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My First Javascript Lesson</title>
+
+    <script language="javascript" type="text/javascript">
+        // All our javascript code here
+        // Document Object Model
+
+        var number = 5;
+        var name = "Chetan";  // global variable
+        var names = ["Angela", "Chetan", "George", "Jackson"]
+
+        function writeHTML() {
+            document.write("<h1>Hello World!!!</h1>");
+            document.writeln(number + "<br>");
+            document.writeln(name);
+        }
+
+        function sayName() {
+            var name = "Eddie"; // local variable
+            alert(name);
+        }
+
+        function basicCalculation() {
+            var num1 = 5;
+            var num2 = 2;
+            var num3 = 0;
+            num3 = num1 / num2;
+            document.write("The mutliplication of " + num1 + " and " + num2 + " = " + (num1 * num2) + "<br>");
+            document.write("The division of " + num1 + " and " + num2 + " = " + (num3) + "<br>");
+            document.write("The addition of " + num1 + " and " + num2 + " = " + (num1 + num2) + "<br>");
+            document.write("The subtraction of " + num1 + " and " + num2 + " = " + (num1 - num2) + "<br>");
+            document.write("The modulus of "  + num1 + " and " + num2 + " = " + (num1 % num2) + "<br>");
+        }
+    
+        function processNumber() {
+            var num = document.getElementById("postnum").value;
+            var rhs = 50;
+            //alert(num);
+            if (num < rhs) {
+                alert("You have failed the test");
+            }
+            else if (num > rhs) {
+                alert("You have passed the test");                
+            }
+            else {
+                alert("Border Line pass");                                
+            }
+
+            if ((num >= 90) && (num <= 100)) {
+                alert("Distinction");
+            }
+            else if ((num > 80) && (num < 90)) {
+                alert("A");                
+            }
+            else if (num > rhs) {
+                alert("Pass");                                
+            }
+            else {
+                alert("Border Line pass");                                                
+            }
+
+        }
+
+        function processNames() {
+            var count = 0;
+            document.writeln("Number of Items in Names: " + names.length + "<br>");
+            while (count < names.length) {
+                document.writeln(names[count] + "<br>");
+                console.log(names[count]);
+                count++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Print text" onclick="writeHTML()">
+    <input type="button" value="Say Name" onClick = "sayName()">
+    <input type="button" value="Basic Calculation" onClick = "basicCalculation()">
+    <input type="button" value ="Loop through Names" onclick="processNames()" />
+    <hr>
+    Enter a Number: <input type="number" id="postnum" name="post_num" /> 
+    <input type="button" value ="Post Number" onclick="processNumber()" />
+
+</body>
+
+</html>
