@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title> My Javascript 02</title>
+    <script language="javascript" type="text/javascript">
+        var myObject;
+
+        myObject = [
+            {
+                "id": 1,
+                "name": "Steven",
+                "dob": "01-Jan-1977",
+                "cars": ["Civic", "Evolution", "Subaru"],
+            },
+            {
+                "id": 2,
+                "name": "Eddie",
+                "dob": "01-Dec-1977",
+                "cars": ["QQ", "Chevrolet", "Mini"],
+            },
+            {
+                "id": 3,
+                "name": "Grace",
+                "dob": "01-Jul-1977",
+                "cars": ["BMW", "Mercedes", "Lexus"],
+            }];
+
+        var linebreak = "<br>";
+        var count     = 0;
+        var carInfo   = "";
+        var carDtls   = "";
+        var name, dob, car, carlen;
+
+        function printData(count) {
+            name   = myObject[count].name;
+            dob    = myObject[count].dob;
+            carlen = myObject[count].cars.length;
+            var car = "";
+            for(var i=0; i < carlen; i++) {
+                car += myObject[count].cars[i] + linebreak;
+            }
+            document.getElementById("info").innerHTML += name + linebreak + dob + linebreak + car + linebreak;
+        }
+
+        function whileLoopData() {
+            count=0;
+            document.getElementById("info").innerHTML = "";
+            while (count < myObject.length) {
+                printData(count);
+                count++;
+            }
+        }
+
+        function getInformation() {
+            count   = 0;
+            carDtls = "";
+            carInfo = "";
+            while (count < myObject.length) {
+                name   = myObject[count].name;
+                dob    = myObject[count].dob;
+                carlen = myObject[count].cars.length;
+                for (i = 0; i < carlen; i++) {
+                    carDtls += myObject[count].cars[i] + linebreak;
+                }
+                carInfo += name + linebreak + dob + linebreak + carDtls + linebreak;
+                carDtls = "";
+                count++;
+            }
+            document.getElementById("info").innerHTML = carInfo;
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" name="getInfo" value="Get Information" onClick="getInformation()" /> <br>
+    <input type="button" name="getData" value="Get Data" onClick="whileLoopData()" /> 
+    <p id="info">
+    </p>
+</body>
+
+</html>
