@@ -32,10 +32,10 @@ function createBottle(imageName) {
 
 for (var i = 0; i < 100; i++) {
 
-    for (var j = i; j < 100-i; j++) {
-        var imageName = 'IMG_1712.jpg';
+    document.writeln("<p>" + i + " Bottles </p>");
+    for (var j = 0; j < i; j++) {
+        var imageName = 'greenbottle.jpg';
         var bottle = createBottle(imageName);
         document.body.querySelector("#section2").appendChild(bottle);
     }
-    document.writeln("<br>");
 }
