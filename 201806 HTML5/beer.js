@@ -1,4 +1,4 @@
-document.querySelector("#section1").innerText = "Information (" + new Date().getDay() + "/" + new Date().getMonth() + "/" + new Date().getFullYear() + ")";
+document.querySelector("#section1").innerText = "Beer Bootles Song (" + new Date().getDay() + "/" + new Date().getMonth() + "/" + new Date().getFullYear() + ")";
 
 var todoElem = document.body.querySelector("#todo")
 
@@ -18,12 +18,16 @@ function getNumberToWords (num) {
     var words;
     var quotient;
     var reminder;
-    if (num < 9) {
-        word = unit[num];
+    
+    if ((num > 0) && (num <= 9)) {
+        word = unit[num-1];
     }
-    else if ((num > 9 ) && (num < 19)) {
-        quotient = Math.floor (num / 10);
-        word = dbls[quotient];
+    else if (num == 0) {
+        word = "zeros"; 
+    }
+    else if ((num > 10 ) && (num < 20)) {
+        reminder = Math.floor (num % 10);
+        word = dbls[reminder-1];
     }
     else {
         quotient = Math.floor(num / 10);
@@ -31,7 +35,7 @@ function getNumberToWords (num) {
         if (reminder > 0) {
             word = tens[quotient-1] + " " + unit[reminder-1];
         }
-        else {
+        else if (quotient > 0) {
             word = tens[quotient-1];
         }
     }

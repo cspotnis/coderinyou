@@ -1,58 +1,89 @@
 
+/* Creation of Input Text for getting Animals */
 function createText() {
     var inputText = document.createElement('input');
     inputText.name = "todo-text";
     inputText.id = "todo-item";
-    
-    return(inputText);
+    inputText.placeholder = "Enter Animal Here";
+
+    return (inputText);
 }
 
-function clickAnimalHandler(inputButton) {
-    console.log('> Button Clicked' + inputButton.value);
-}
-
+/* Creation of Button for adding Animlas to List */
 function createButton() {
     var inputButton = document.createElement('button');
     inputButton.name = "todo-button";
     inputButton.id = "todo-btn";
-    inputButton.textContent ="Add Animals"
-    inputButton.addEventListener('click', clickAnimalHandler(inputButton));
+    inputButton.textContent = "Add Animals"
 
     return (inputButton);
 }
 
+/* Event Listener Function for Animal Button */
+function clickAnimalHandler() {
+    var atask = anmText.value;
+
+    console.log('> Button Clicked' + anmBtn.value);
+
+    if (atask == "")
+        return;
+
+    var aliElem = document.createElement('li');
+    aliElem.textContent = atask;
+    aliElem.addEventListener('click', liAnimalHandler);
+    aulElem.appendChild(aliElem);
+
+    anmText.value = "";
+
+}
+
+function liAnimalHandler(eventObject) {
+    console.log('li cliked', eventObject.target);
+    eventObject.target.remove();
+}
+
+/* Snippet for Input Text Animals / Animal Button / Animal List */
 var pElem = document.createElement('div');
-pElem.appendChild(createText());
-pElem.appendChild(createButton());
+var aulElem = document.querySelector("#my-animals");
+var anmText = createText();
+var anmBtn = createButton();
+
+pElem.appendChild(anmText);
+pElem.appendChild(anmBtn);
 document.body.querySelector("#frm-elem").appendChild(pElem);
+anmBtn.addEventListener('click', clickAnimalHandler);
 
 
-function liHandler(eventObject) {
+/* Snippet for Fruits Button / Text / List */
+
+function liFruitsHandler(eventObject) {
     console.log('li cliked', eventObject.target);
     eventObject.target.remove();
 }
 
 function clickFruitsHandler() {
-    console.log('> Button Clicked' + inputElem.value);
-    var task = inputElem.value;
+    console.log('> Button Clicked' + finputElem.value);
+    var task = finputElem.value;
 
-    if (task == "") 
+    if (task == "")
         return;
 
-    var liElem = document.createElement('li');
-    liElem.textContent = task;
-    liElem.addEventListener('click', liHandler);
-    ulElem.appendChild(liElem);
+    var fliElem = document.createElement('li');
+    fliElem.textContent = task;
+    fliElem.addEventListener('click', liFruitsHandler);
+    fulElem.appendChild(fliElem);
 
-    inputElem.value="";
+    finputElem.value = "";
 
 }
-function mouseHandler() {
-    console.log('> mouse Entered' + new Date());
-}
 
-var ulElem = document.querySelector("#my-fruits");
-var inputElem = document.body.querySelector("#item");
-var addBtnElem = document.body.querySelector('#addBtn');
-addBtnElem.addEventListener('click', clickFruitsHandler);
+var fulElem = document.querySelector("#my-fruits");
+var finputElem = document.body.querySelector("#item");
+var faddBtnElem = document.body.querySelector('#addBtn');
+faddBtnElem.addEventListener('click', clickFruitsHandler);
+
+
+//function mouseHandler() {
+//    console.log('> mouse Entered' + new Date());
+//}
 //addBtnElem.addEventListener('mouseenter', mouseHandler);
