@@ -1,4 +1,4 @@
-document.querySelector("#section1").innerText = "Beer Bootles Song (" + new Date().getDay() + "/" + new Date().getMonth() + "/" + new Date().getFullYear() + ")";
+document.querySelector("#section1").innerText = "Beer Bootles Song (" + new Date().getDay() + "/" + new Date().getMonth() + "/" + new Date().getFullYear() + " Author: Chetan Potnis)";
 
 var todoElem = document.body.querySelector("#todo")
 
